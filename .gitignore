@@ -1,3 +1,6 @@
 2d-project-assets.zip
 2d-project-completed.zip
 2d-project-completed/
+
+# Godot local editor/cache data
+2d-project-assets/.godot/
