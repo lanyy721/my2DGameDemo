@@ -1,0 +1,29 @@
+# Normalize text files by default.
+* text=auto
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+# Godot text resources should stay stable across operating systems.
+*.cfg text eol=lf
+*.gd text eol=lf
+*.godot text eol=lf
+*.md5 text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.uid text eol=lf
+
+# Binary source assets and export artifacts.
+*.bin binary
+*.ctex binary
+*.exe binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.mp3 binary
+*.ogg binary
+*.pck binary
+*.png binary
+*.res binary
+*.wav binary
+*.webp binary
+*.zip binary
