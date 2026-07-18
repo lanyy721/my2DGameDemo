@@ -10,10 +10,6 @@
 2d-project-assets/*.translation
 2d-project-assets/**/*.translation
 
-# Legacy Godot asset import metadata (regenerated from source assets)
-2d-project-assets/*.import
-2d-project-assets/**/*.import
-
 # Local Godot export/build outputs
 2d-project-assets/export/
 2d-project-assets/exports/

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bvp0oy6d34s7n"]
+
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_wkcnj"]
+[ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_8id3q"]
+[ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="2_kbdm8"]
+
+[node name="Game" type="Node2D" unique_id=718209167]
+y_sort_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1690468802]
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 1927.0
+offset_bottom = 1068.0
+
+[node name="Player" parent="." unique_id=401083152 instance=ExtResource("1_wkcnj")]
+position = Vector2(767, 603)
+
+[node name="Mob" parent="." unique_id=2137865495 instance=ExtResource("2_kbdm8")]
+position = Vector2(480, 479)
+
+[node name="Mob2" parent="." unique_id=1973348026 instance=ExtResource("2_kbdm8")]
+position = Vector2(480, 479)
+
+[node name="Mob3" parent="." unique_id=1834202889 instance=ExtResource("2_kbdm8")]
+position = Vector2(480, 479)
+
+[node name="Mob4" parent="." unique_id=2044904040 instance=ExtResource("2_kbdm8")]
+position = Vector2(480, 479)
+
+[node name="StaticBody2D" parent="." unique_id=1283337902 instance=ExtResource("2_8id3q")]
+position = Vector2(208, 440)
+
+[node name="StaticBody2D2" parent="." unique_id=140596371 instance=ExtResource("2_8id3q")]
+position = Vector2(422, 847)
+
+[node name="StaticBody2D3" parent="." unique_id=548870526 instance=ExtResource("2_8id3q")]
+position = Vector2(1377, 303)
+
+[node name="StaticBody2D4" parent="." unique_id=583275229 instance=ExtResource("2_8id3q")]
+position = Vector2(1522, 409)
+
+[node name="StaticBody2D5" parent="." unique_id=870010317 instance=ExtResource("2_8id3q")]
+position = Vector2(1266, 356)
+
+[node name="StaticBody2D6" parent="." unique_id=884105324 instance=ExtResource("2_8id3q")]
+position = Vector2(1280, 793)
+
+[node name="StaticBody2D7" parent="." unique_id=685434793 instance=ExtResource("2_8id3q")]
+position = Vector2(1697, 771)
+
+[node name="StaticBody2D8" parent="." unique_id=1974627924 instance=ExtResource("2_8id3q")]
+position = Vector2(656, 242)
