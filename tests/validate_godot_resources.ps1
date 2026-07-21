@@ -22,11 +22,23 @@ Get-ChildItem -Path $projectRoot -Recurse -File -Filter '*.gd' | ForEach-Object 
 }
 
 $mobScript = Get-Content -Raw (Join-Path $projectRoot "mob.gd")
-if ($mobScript -notmatch '@onready\s+var\s+player\s*=\s*get_node\("/root/Game/Player"\)') {
-    $errors.Add('mob.gd must resolve Player from the absolute scene-tree path /root/Game/Player.')
+if ($mobScript -notmatch 'get_node_or_null\("/root/Game/Player"\)') {
+    $errors.Add('mob.gd must allow the Player node to be absent when mob.tscn runs by itself.')
+}
+if ($mobScript -notmatch 'if\s+not\s+is_instance_valid\(player\):\s*\r?\n\s*velocity\s*=\s*Vector2\.ZERO\s*\r?\n\s*return') {
+    $errors.Add('mob.gd must stop safely when no Player exists in the current scene tree.')
 }
 if ($mobScript -notmatch 'direction_to\(player\.global_position\)') {
     $errors.Add('mob.gd must read the Player global_position property when calculating direction.')
+}
+
+$colorPickerPresetScriptPath = Join-Path $projectRoot "addons/colorpicker_presets/colorpicker_presets.gd"
+$colorPickerPresetScript = Get-Content -Raw -LiteralPath $colorPickerPresetScriptPath
+if ($colorPickerPresetScript -match '\.find\("#"\)') {
+    $errors.Add('colorpicker_presets.gd must not use raw Array.find("#"); CRLF GPL files produce "#\r" and keep header rows in the palette.')
+}
+if ($colorPickerPresetScript -notmatch '\.size\(\)\s*<\s*3') {
+    $errors.Add('colorpicker_presets.gd must validate RGB component count before reading rgb[0], rgb[1], and rgb[2].')
 }
 
 Get-ChildItem -Path $projectRoot -Recurse -File -Filter '*.import' | ForEach-Object {

@@ -7,7 +7,10 @@
 [node name="Game" type="Node2D" unique_id=718209167]
 y_sort_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1690468802]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1558233139]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1690468802]
 offset_left = -3.0
 offset_top = -1.0
 offset_right = 1927.0
@@ -19,14 +22,11 @@ position = Vector2(767, 603)
 [node name="Mob" parent="." unique_id=2137865495 instance=ExtResource("2_kbdm8")]
 position = Vector2(480, 479)
 
-[node name="Mob2" parent="." unique_id=1973348026 instance=ExtResource("2_kbdm8")]
-position = Vector2(480, 479)
+[node name="Mob2" parent="." unique_id=450801691 instance=ExtResource("2_kbdm8")]
+position = Vector2(943, 464)
 
-[node name="Mob3" parent="." unique_id=1834202889 instance=ExtResource("2_kbdm8")]
-position = Vector2(480, 479)
-
-[node name="Mob4" parent="." unique_id=2044904040 instance=ExtResource("2_kbdm8")]
-position = Vector2(480, 479)
+[node name="Mob3" parent="." unique_id=721922462 instance=ExtResource("2_kbdm8")]
+position = Vector2(784, 829)
 
 [node name="StaticBody2D" parent="." unique_id=1283337902 instance=ExtResource("2_8id3q")]
 position = Vector2(208, 440)
