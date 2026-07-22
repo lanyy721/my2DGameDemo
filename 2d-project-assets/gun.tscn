@@ -7,6 +7,8 @@
 radius = 513.0088
 
 [node name="Gun" type="Area2D" unique_id=18712494]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_dk5gl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=922947113]
@@ -21,6 +23,13 @@ position = Vector2(100, -15)
 rotation = -0.05235988
 texture = ExtResource("1_vk1bi")
 
-[node name="Marker2D" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=235403774]
+[node name="ShootPoint" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=235403774]
+unique_name_in_owner = true
 position = Vector2(26.230047, -10.294154)
 rotation = 0.031087607
+
+[node name="Timer" type="Timer" parent="." unique_id=1457999547]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
