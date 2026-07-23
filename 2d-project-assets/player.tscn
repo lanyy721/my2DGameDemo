@@ -7,6 +7,23 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wp5od"]
 radius = 31.06445
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k56px"]
+radius = 35.1141
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k56px"]
+bg_color = Color(0.22190201, 0.22190201, 0.22190201, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp5od"]
+bg_color = Color(0.3882353, 0.8, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Player" type="CharacterBody2D" unique_id=401083152]
 script = ExtResource("1_onrkg")
 
@@ -19,3 +36,23 @@ shape = SubResource("CircleShape2D_wp5od")
 position = Vector2(0, -30)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1984439979]
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1055584924]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=274431096]
+shape = SubResource("CircleShape2D_k56px")
+debug_color = Color(0.89460486, 0.28478107, 0.386316, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1343184611]
+unique_name_in_owner = true
+offset_left = -89.0
+offset_top = -149.0
+offset_right = 89.0
+offset_bottom = -122.0
+theme_override_styles/background = SubResource("StyleBoxFlat_k56px")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wp5od")
+value = 100.0
+show_percentage = false
